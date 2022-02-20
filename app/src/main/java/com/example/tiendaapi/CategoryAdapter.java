@@ -35,7 +35,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     private ArrayList<Category> category;
 
     private String urlGETAll = "http://localhost:3000/products/";
-    private String urlPOST = "http://localhost:3000/products/";
+    private String urlPOST = "http://localhost:3000/products/create";
     private String urlPUT = "http://localhost:3000/products/update/";
     private String urlDelete = "http://localhost:3000/products/delete/";
 

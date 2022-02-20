@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private CategoryAdapter categoryAdapter;
 
     private String urlGETAll = "http://localhost:3000/products/";
-    private String urlPOST = "http://localhost:3000/products/";
+    private String urlPOST = "http://localhost:3000/products/create";
     private String urlPUT = "http://localhost:3000/products/update/";
     private String urlDelete = "http://localhost:3000/products/delete/";
 
@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.category);
 
         dialog = new Dialog(this);
+        getData();
 
     }
 
