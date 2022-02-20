@@ -1,6 +1,6 @@
 package com.example.tiendaapi.model;
 
-public class product {
+public class Category {
     int id;
     Boolean pack;
     String description;
@@ -8,10 +8,12 @@ public class product {
     Integer price;
 
 
-    public product() {
+
+    public Category() {
     }
 
-    public product(int id, Boolean pack, String description, String name, Integer price) {
+    public Category(int id, Boolean pack, String description, String name, Integer price) {
+        this.id = id;
         this.id = id;
         this.pack = pack;
         this.description = description;
@@ -26,6 +28,8 @@ public class product {
     public void setId(int id) {
         this.id = id;
     }
+
+
 
     public Boolean getPack() {
         return pack;
@@ -59,3 +63,6 @@ public class product {
         this.price = price;
     }
 }
+
+
+
