@@ -6,7 +6,7 @@ public class product {
     String description;
     String name;
     Integer price;
-    String Category;
+
 
     public product() {
     }

@@ -6,12 +6,15 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.tiendaapi.model.product;
 import com.google.android.gms.analytics.ecommerce.Product;
 
@@ -30,6 +33,9 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     private JsonArrayRequest arrayRequest;
     private RecyclerView recyclerView;
     private Dialog dialog;
+    private ProductAdapter productAdapter;
+
+    private String url = "";
 
 
     @Override
@@ -49,34 +55,46 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                 product.clear();
                 getData();
             }
-        })
+        });
     }
 
     private void getData() {
+        refresh.setRefreshing(true);
         arrayRequest = new JsonArrayRequest(url, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 JSONObject jsonObject = null;
-                for (int i= 0 ; i<response.length() ; i++) {
+                for (int i = 0; i < response.length(); i++) {
                     try {
                         jsonObject = response.getJSONObject(i);
 
-                        Product cat = new Product();
-                        cat.setId(JSONObject.getInt("id"));
-                        cat.setCategory(jsonObject.getString("name"));
-                        product.add(cat);
-                    }catch (JSONException e){
+                        Product pro = new Product();
+                        pro.setId(jsonObject.getInt("id"));
+                        pro.setCategory(jsonObject.getString("name"));
+                        product.add(pro);
+                    } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
                 adapterPush(product);
+                refresh.setRefreshing(false);
             }
 
+        }, new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error){
 
-        })
+            }
+        });
+
+        requestQueue = Volley.newRequestQueue(MainActivity.this);
+        requestQueue.add(arrayRequest);
     }
 
     private void adapterPush(ArrayList<Product> product) {
+    productAdapter = new ProductAdapter(this, product);
+    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    recyclerView.setAdapter(productAdapter);
     }
 
     @Override
