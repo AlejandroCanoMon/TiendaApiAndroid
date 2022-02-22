@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/productListFragment">
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.api.Peliculas.interfaces.ProductListFragment"
+        android:label="fragment_product_list"
+        tools:layout="@layout/fragment_product_list" >
+        <action
+            android:id="@+id/action_productListFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment" />
+        <action
+            android:id="@+id/action_productListFragment_to_productAddFragment"
+            app:destination="@id/productAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.api.Peliculas.interfaces.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue="Nombre" />
+        <argument
+            android:name="desc"
+            app:argType="string" />
+        <argument
+            android:name="category"
+            app:argType="string" />
+        <argument
+            android:name="price"
+            app:argType="integer" />
+        <argument
+            android:name="myId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_productDetailFragment_to_productModifyFragment"
+            app:destination="@id/productModifyFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_productDetailFragment_to_productListFragment"
+        app:destination="@id/productListFragment" />
+    <fragment
+        android:id="@+id/productAddFragment"
+        android:name="com.api.Peliculas.interfaces.ProductAddFragment"
+        android:label="fragment_product_add"
+        tools:layout="@layout/fragment_product_add" >
+        <action
+            android:id="@+id/action_productAddFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productModifyFragment"
+        android:name="com.api.Peliculas.interfaces.ProductModifyFragment"
+        android:label="fragment_product_modify"
+        tools:layout="@layout/fragment_product_modify" >
+        <action
+            android:id="@+id/action_productModifyFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+        <argument android:name="myId"
+            app:argType="integer" />
+    </fragment>
+</navigation>
