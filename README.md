@@ -13,8 +13,10 @@ Para poder correr esta aplicación, necesitamos levantar primero la API:
 add-migration nombre
 update-database
         ```
+        
+        
 
-      Donde nombre es el nombre de la migración.
+      
  ***3º***En Visual hay que cambiar la string de la base de datos al puerto donde quieras levantar la API. 
  
  
