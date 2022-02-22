@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#E91E63"
+    tools:context=".interfaces.ProductModifyFragment">
+
+    <TextView
+        android:id="@+id/lblName"
+        android:layout_width="168dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="Nombre :"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etModName"
+        android:layout_width="189dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/balthazar"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/lblName"
+        app:layout_constraintTop_toTopOf="@+id/lblName" />
+
+    <TextView
+        android:id="@+id/lblDesc"
+        android:layout_width="168dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="Descripción:"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/lblName"
+        app:layout_constraintTop_toBottomOf="@+id/lblName" />
+
+    <EditText
+        android:id="@+id/etModDesc"
+        android:layout_width="189dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="192dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/balthazar"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/lblDesc"
+        app:layout_constraintTop_toTopOf="@+id/lblDesc" />
+
+    <TextView
+        android:id="@+id/lblCategory"
+        android:layout_width="170dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="156dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="Pack:"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvName"
+        app:layout_constraintStart_toStartOf="@+id/lblDesc"
+        app:layout_constraintTop_toBottomOf="@+id/lblDesc" />
+
+    <EditText
+        android:id="@+id/etModCat"
+        android:layout_width="189dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/balthazar"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/lblCategory"
+        app:layout_constraintTop_toTopOf="@+id/lblCategory" />
+
+    <TextView
+        android:id="@+id/lblPrice"
+        android:layout_width="162dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/roboto_thin"
+        android:text="Precio:"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/lblCategory"
+        app:layout_constraintTop_toBottomOf="@+id/lblCategory" />
+
+    <EditText
+        android:id="@+id/etModPrice"
+        android:layout_width="189dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:fontFamily="@font/balthazar"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/lblPrice"
+        app:layout_constraintTop_toTopOf="@+id/lblPrice" />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="143dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="120dp"
+        android:backgroundTint="#F9AA33"
+        android:text="Guardar"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="@+id/lblPrice"
+        app:layout_constraintTop_toBottomOf="@+id/lblPrice" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="143dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="#F9AA33"
+        android:text="Cancelar"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toEndOf="@+id/btnGuardar"
+        app:layout_constraintTop_toTopOf="@+id/btnGuardar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
