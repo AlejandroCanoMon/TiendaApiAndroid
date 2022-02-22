@@ -8,6 +8,8 @@ Para poder correr esta aplicación, necesitamos levantar primero la API:
 
 
 ***1º***Tienen que tener SQL Server abierto, y la aplicación en Visual Studio.(Para runearla pulsar ctrl+F5)
+
+
 ***2º***En Visual Studio, abrir la consola e introducir los siguientes comandos:
         ```
 add-migration nombre
